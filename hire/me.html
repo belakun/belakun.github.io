@@ -1,0 +1,642 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Maksym Bielinskyi</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 1px solid rgb(50, 50, 50);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bc75dbcd-df68-43a9-ac83-39bdeb20b1a3" class="page sans"><header><h1 class="page-title">Maksym Bielinskyi</h1></header><div class="page-body"><div id="f6818b8c-e4b1-47ac-a617-0d9c4850af83" class="column-list"><div id="282e9841-a90f-40ce-8c08-fdd1a04dcb15" style="width:37.5%" class="column"><p id="6a2dbcb5-acd7-4895-8790-881868f79b36" class=""><strong><mark class="highlight-orange">Specialisation</mark></strong>: Backend  Developer (<strong>Node.js</strong>)</p><p id="23da2544-7676-47ca-9447-645544991049" class=""><strong><mark class="highlight-orange">Spoken languages</mark></strong>: English (C1)</p><p id="79d396fb-b8c4-44cd-b3b8-14cb08c0818a" class=""><strong><mark class="highlight-orange">Education</mark></strong>: MD in Project Management (NMetAU)</p></div><div id="33e04d0a-98bf-4996-a78f-2a47a988a1d6" style="width:62.5%" class="column"><p id="7cc10509-6879-43b2-afd0-36a2a9c58908" class=""><a href="mailto:mv.belinskiy@gmail.com"><mark class="highlight-orange">E-mail: </mark></a><a href="mailto:mv.belinskiy@gmail.com">mv.belinskiy@gmail.com</a></p><p id="2ec6e4a4-6d9e-47a5-a3d6-360b782b14e2" class=""><a href="https://www.linkedin.com/in/maksym-bielinskyi"><mark class="highlight-orange">LinkedIn: </mark></a><a href="https://www.linkedin.com/in/maksym-bielinskyi">https://www.linkedin.com/in/maksym-bielinskyi</a></p><p id="5fe99cb0-e93d-4f6f-9dd0-351df9e7c756" class=""><mark class="highlight-orange"><a href="tg://user?id=belakun">DM in telegram: @belakun (clickable)</a></mark></p></div></div><hr id="a7616fac-1a3e-4d76-b143-806df712ab2d"/><h1 id="ef1f733e-0c32-4fba-bb8d-aca23faf5c5a" class=""><span style="border-bottom:0.05em solid"><mark class="highlight-orange">Summary of Qualifications</mark></span></h1><p id="04e614c5-261c-4870-8863-4404703ac6bb" class="">Have more than 5 years of full stack software engineering experience, working in distributed and dedicated teams that followed either scrum framework or lean methodology. Contributed to enterprise grade web apps, e-commerce PaaS solutions, integration solutions, chat bots, financial market analysis and trading automation software. Leaded requirement gathering and analysis part of SDLC, designed and implemented high level architecture for proprietary AB testing platform content delivery engine. Has most experience in JavaScript programming language for both Node.js and frontend. Proactive and responsible team player, never afraid to seem stupid or admit own mistakes. Most performant in harsh and &quot;you&#x27;re on your own&quot; conditions. Values learning abilities over knowledge, transparency over assumptions and awareness over ignorance.</p><hr id="74d70a8e-9f7d-4029-93a4-d060e1fe71c2"/><h1 id="1285c8f3-c19c-4ef2-82d0-7b592927f3df" class=""><span style="border-bottom:0.05em solid"><mark class="highlight-orange">Experience</mark></span></h1><h3 id="bfb718cb-27c5-4bed-8305-70a820beec19" class=""><mark class="highlight-orange">[Senior SD]</mark> E-Commerce PaaS (Apr 2021-present)</h3><div id="d95a96e2-2996-487a-9fa9-4852d8126d9e" class="column-list"><div id="82527fbf-23f0-4d3e-8f60-919615832138" style="width:62.5%" class="column"><p id="fe34bc11-ed2d-4c17-8aa9-fbe54b6275e0" class="">Together with a small team of 3 engineers <strong>architected</strong> and built one of e-commerce platforms services for world wide chain of restaurants. Service provides capabilities for POS registration, communication and configuration and observability over MQTT protocol. As part of platforms federated graph, it exposes GraphQl API to query for analytical data,  check POS devices health.</p></div><div id="fd6e9b4d-f203-4bd1-86a0-508c25fbf267" style="width:37.49999999999999%" class="column"><blockquote id="95f00e7b-63db-4647-97f3-46cc00144106" class=""><mark class="highlight-orange"><strong>Technologies</strong></mark>: <strong>Node.js</strong>, Express, <strong>PostgreSQL</strong>, Objection, knex.js, <strong>MQTT</strong>, aedes.js, <strong>Redis</strong>, <strong>Docker</strong>, <strong>GraphQL</strong>, Apollo, <strong>Couchbase</strong>, Kafka, Mocha, Chai, joi, eslint, husky, Gitlab CI/CD, git
+<mark class="highlight-orange"><strong>Methodologies</strong></mark>: SOA, Clean Architecture, SOLID, Agile</blockquote></div></div><hr id="5f9bcefe-2366-4497-aba1-553518a24335"/><h3 id="0c07b9f3-1961-4a9c-801f-e014e8af3570" class=""><mark class="highlight-orange">[TL]</mark> MS Teams Integration (Feb 2021- Apr 2021)</h3><div id="2d84d9bd-964d-4aee-ae8d-0bc11caab736" class="column-list"><div id="a0ee9cd1-f6e7-4692-9a49-695c23cb656e" style="width:62.5%" class="column"><p id="0094b487-690b-44af-a97f-96456aa64c74" class="">Successfully delivered MS Teams integration solution for one of world renowned employee engagement platforms, starting from discovery phase and up to certificate of completion. Leaded project through all SDLC stages, including technical demos, documentation preparation and assisting in integration of delivered product into clients cloud environments.</p></div><div id="9ef2268a-2db2-43e0-8f07-280d20d37431" style="width:37.5%" class="column"><blockquote id="3f2ea451-a64f-4c00-b15f-b7fc8a6001cf" class=""><mark class="highlight-orange"><strong>Technologies</strong></mark>: MS Bot Framework, <strong>Node.js</strong>, Express, <strong>PostgreSQL</strong>, Sequelize, <strong>Redis</strong>, <strong>Docker</strong>, <strong>GraphQL</strong>, Mocha, Chai, joi, eslint, Buildkite, git
+<mark class="highlight-orange"><strong>Methodologies</strong></mark>: SOA, SOLID, Agile</blockquote></div></div><hr id="76c5058e-c43b-42f8-94a1-639dbad5108d"/><h3 id="41988352-175a-4ef9-bf8f-bc9c8350b3d1" class=""><mark class="highlight-orange">[Cofounder / SE]</mark> Crypto market analysis and trading automation (Jan 2020 - Jan 2021)</h3><div id="deb56689-8369-4f11-873c-668f0a324ebd" class="column-list"><div id="d1cb8c15-458c-4221-b62b-31a2ec3c4a36" style="width:62.5%" class="column"><p id="8c531636-3c57-42d2-bccb-ae6e1f6d0de8" class="">As a part of team of enthusiasts contributed to development of application for cryptocurrency trading automation, risk assessment, reporting and monitoring through Telegram chat bot channel commands.</p></div><div id="6e2d8a15-ca54-4a45-ad44-2aa13660225d" style="width:37.50000000000001%" class="column"><blockquote id="112e09cb-669f-4128-bf3b-a3eabe41cbf0" class=""><mark class="highlight-orange"><strong>Technologies</strong></mark>: Node.js, Pinescript, AWS Lambda, Telegram API, git
+<mark class="highlight-orange"><strong>Methodologies</strong></mark>: OOD, Kanban.</blockquote></div></div><hr id="47e700fe-c0fd-4b70-803f-c39543d59c15"/><h3 id="fc751273-a1ab-4110-8e50-a23aaba1090e" class=""><mark class="highlight-orange">[TL]</mark> Proprietary A/B Testing platform (Jan 2018 - Jan 2020)</h3><div id="8a769587-ab05-47ae-9b1f-9b377c997b16" class="column-list"><div id="805ee521-e45c-4e57-82a7-af82c14aeadd" style="width:62.5%" class="column"><p id="50c72dc1-b2e5-4a57-9e12-a2fe2088a48b" class="">Came up with, designed and implemented an idea of unique approach to content delivery mechanism that makes a decision of what exact optimisation campaign should be shown, on what page and under which conditions. The resulting solution provided increased flexibility and control, simplified setup for non technical users, promoted code reusability and most important had out-of-box integrations with modern UI frameworks (Angular, Vue, React).</p></div><div id="b254d9ee-b758-461b-a42b-b0ce73060e15" style="width:37.50000000000001%" class="column"><blockquote id="3e1772fa-9eb5-4e59-b257-a3a664ac5a80" class=""><mark class="highlight-orange"><strong>Technologies</strong></mark>: JavaScript, AWS, DynamoDB, GTM, Google Analytics, git
+<mark class="highlight-orange"><strong>Methodologies</strong></mark>: Lean, OOD, SOLID.</blockquote></div></div><hr id="f0077dfd-dea2-4c23-b147-06ea3814e1bc"/><h3 id="249228ff-707d-4162-a3ad-9796664e6f9e" class=""><mark class="highlight-orange">[Middle SD]</mark> Network Monitoring Application (Apr 2015 - Jan 2018)</h3><div id="408f75ec-58a6-4e0b-9296-a9156db4099b" class="column-list"><div id="d1f2d3b5-4be1-4491-a602-037de1f29f17" style="width:62.5%" class="column"><p id="fa9578ca-e1a8-419d-958f-9d85fa61a090" class="">As a part of the teams joint efforts standardised existing UI architecture greatly improving testability and reducing new features TTM. Successfully designed and integrated data export with Puppeteer, provided integration with both Ext.JS frontend and .NET backend scheduled tasks. Optimised and refactored SQL queries reducing codebase 3-fold and improving performance significantly.</p></div><div id="266f3f23-cb05-43eb-ae53-d2512bd8212d" style="width:37.5%" class="column"><blockquote id="00e5086f-4940-4e7b-828d-3aa636376444" class=""><mark class="highlight-orange"><strong>Technologies</strong></mark>: JavaScript, С#, Ext.js, D3.js, .Net, MVC4, MS SQL Server, P4V, SASS,
+<mark class="highlight-orange"><strong>Methodologies</strong></mark>: Agile.</blockquote></div></div><hr id="0a4554b6-deac-4b07-9f28-843c79a388f7"/><h3 id="995b98a2-f9e8-4cfb-84b2-c975de19791b" class=""><mark class="highlight-orange">[TL]</mark> 3rd party plugin for Adobe Photoshop (Aug 2014 - Feb 2015)</h3><div id="8b65db4f-e90d-47ff-bb13-86970ad1782d" class="column-list"><div id="69e7a971-582b-4e40-9501-58eb1018245f" style="width:62.5%" class="column"><p id="aa5d51c2-3ce3-418d-aa26-0405766264d0" class="">Leaded project through SDLC activities, including initial requirements gathering and feasibility discovery. Integrated all created E2E tests into existing clients framework, prepared documentation and  delivered final product in a form of cross-platform installable application. Developed performance testing approach, identified weak links and applied performance improvements </p></div><div id="5f3ddc42-b8fa-4f98-b5e7-ba43564cde10" style="width:37.5%" class="column"><blockquote id="99837144-4d9f-4a70-a2ad-a1d46f2a371d" class=""><mark class="highlight-orange"><strong>Technologies</strong></mark>: JavaScript, ExtendScript, Java, TestNG, InstallAnywhere.
+<mark class="highlight-orange"><strong>Methodologies</strong></mark>: Agile, OOD, TDD, E2E testing, Performance Testing.</blockquote></div></div><hr id="46dac5a1-9948-44c1-a72b-63a904f5d557"/><p id="6c205c03-d49b-4391-901a-c9f9faf065b7" class="">
+</p></div></article></body></html>
